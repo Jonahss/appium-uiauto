@@ -347,6 +347,13 @@ $.extend(au, {
     return this._returnFirstElem($(elems));
   }
 
+, getElementsByName: function (name, ctx) {
+    var selector = ['#', name].join('');
+    var elems = this.lookup(selector, ctx);
+
+    return this._returnElems($(elems));
+  }
+
 , _returnFirstElem: function (elems) {
     if (elems.length > 0) {
       var el = elems[0];
